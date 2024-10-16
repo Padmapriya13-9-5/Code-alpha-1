@@ -7,6 +7,7 @@ ID:CA/03/41406
 Domain: web development 
 
 Duration: October 1.10.2024-31.10.2024
+Task -2(image gallery)
 
 Overview of the Project:-
 
