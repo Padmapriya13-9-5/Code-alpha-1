@@ -1,0 +1,109 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>GALLERY</title>
+        <link rel="stylesheet" href="galerry.css">
+        </head>
+        <body>
+            <div class="container">
+                <div class="panel active" style="background-image: url('https://th.bing.com/th/id/OIP.G3vIyYftd2-owGm4Zg-ejQHaEo?w=289&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
+                    <h1>IMAGE GALLERY</h1>
+                </div>
+                <div class="panel" style="background-image: url('https://th.bing.com/th/id/OIP.49CH_m8xcY3b6stGkMkG2AHaEO?w=283&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
+                    <h1>IMAGE GALLERY</h1>
+                </div>
+                <div class="panel" style="background-image: url('https://i.pinimg.com/originals/7c/09/bb/7c09bbed3fc68852268b2b65df856d22.jpg');">
+                    <h1>IMAGE GALLERY</h1>
+                </div>
+                <div class="panel" style="background-image: url('https://w0.peakpx.com/wallpaper/42/933/HD-wallpaper-rainy-day-flowers-rain-trees-pink.jpg');">
+                    <h1>IMAGE GALLERY</h1>
+                </div>
+                <div class="panel" style="background-image: url('https://th.bing.com/th/id/OIP.fxmlzx0s5KFr6XddRHPrPgHaLH?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
+                    <h1>IMAGE GALLERY</h1>
+                </div>
+            </div>
+            <script src="gallery.js"></script>
+        </body>
+        </html>
+
+css
+
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    height: 100vh;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    width: 90vw;
+}
+.panel{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex:0.5;
+    margin: 10px;
+    position: relative;
+    transition: all 700ms ease-in;
+}
+.panel h1{
+    font-size: 35px;
+    position: absolute;
+    bottom: 20px;
+    left:20px;
+    margin: 0;
+    opacity: 0;
+}
+.panel.active{
+    flex:5;
+}
+.panel.active h1{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+@media(max-width:480px){
+    .container{
+        width:100vw;
+        transition: opacity 0.3s ease-in 0.4s;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+}
+
+Javascript
+
+
+const panels=document.querySelectorAll(".panel");
+panels.forEach((panel)=>{
+    panel.addEventListener("click",()=>{
+        removeActiveClasses();
+        panel.classList.add("active");
+    });
+});
+
+function removeActiveClasses(){
+    panels.forEach((panel)=>{
+        panel.classList.remove("active");
+    })
+}
+
+Overview of image gallery 
